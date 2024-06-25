@@ -15,8 +15,7 @@ function GeminiInReact() {
   }, []);
 
   const genAI = new GoogleGenerativeAI(
-    "AIzaSyAi2pyaQcqnT2c1_qRLX1CSBMFQa8V-T1s"
-    // add your api key here
+    "add your api key here"
   );
 
   const handleInputChange = (e) => {

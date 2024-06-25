@@ -1,0 +1,15 @@
+.main{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn{
+    border-radius: 1rem;
+    border: 1px solid black;
+    font-size: medium;
+    padding: 5px 10px;
+    background: #3a86ff;
+    color: white;
+}

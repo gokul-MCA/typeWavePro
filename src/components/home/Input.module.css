@@ -1,0 +1,93 @@
+.inputFields{
+    display: flex;
+    margin: 2rem;
+    align-items: center;
+    justify-content: center;
+     width: fit-content;
+     overflow: hidden;
+}
+.form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.formControl,.btn{
+    padding: 10px;
+    font-size: 1.05em;
+    border: none;
+}
+
+.formControl{
+    min-width: 200px;
+    background: white;
+    border-top-left-radius: 1rem ; 
+    border-bottom-left-radius: 1rem;
+    outline: none;
+}
+
+.btn{
+  border-top-right-radius: 1rem ; 
+  border-bottom-right-radius: 1rem;
+  background: #8338ec;
+  color: white;
+  cursor: pointer;
+}
+
+.formControl::placeholder {
+  opacity: 1; /* Firefox */
+}
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.loader{
+  font-size: 48px;
+  color: #000;
+  display: inline-block;
+  font-family: inherit;
+  position: relative;
+}
+.loader:before{
+  content: '';
+  animation: 5s print linear alternate infinite;
+}
+.loader:after{
+  content: '';
+  position: absolute;
+  right: -4px;
+  top: 50%;
+  transform: translatey(-45%);
+  width: 2px;
+  height: 1.3em;
+  background: currentColor;
+  opacity: 0.8;
+  animation: 1s blink steps(2) infinite;
+}
+
+@keyframes blink {
+  0%  { visibility: hidden;}
+  100%  { visibility: visible;}
+}
+@keyframes print {
+  0% { content: 'L'}
+  10% { content: 'Lo'}
+  20% { content: 'Loa'}
+  30% { content: 'Load'}
+  40% { content: 'Loadi'}
+  50% { content: 'Loadin'}
+  60% { content: 'Loading'}
+  70% { content: 'Loading.'}
+  80% { content: 'Loading..'}
+  90% , 100% { content: 'Loading...'}
+}

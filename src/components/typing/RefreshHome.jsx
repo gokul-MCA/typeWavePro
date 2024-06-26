@@ -4,9 +4,15 @@ import { useNavigate } from "react-router-dom";
 import styles from './RefreshHome.module.css'
 
 const Refresh = () => {
+  const navigate = useNavigate();
+
+  const handleRefresh = () => {
+    navigate(0);
+  };
+
   return (
     <>
-      <HiOutlineRefresh className = {styles.refresh} onClick = {() => location.reload()} />
+      <HiOutlineRefresh className={styles.refresh} onClick={handleRefresh} />
     </>
   );
 }

@@ -6,7 +6,7 @@ import styles from './RefreshHome.module.css'
 const Refresh = () => {
   return (
     <>
-      <HiOutlineRefresh className = {styles.refresh} onClick = {() => window.location.reload()} />
+      <HiOutlineRefresh className = {styles.refresh} onClick = {() => location.reload()} />
     </>
   );
 }

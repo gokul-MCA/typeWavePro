@@ -12,7 +12,7 @@ const Refresh = () => {
 
   return (
     <>
-      <HiOutlineRefresh className={styles.refresh} onClick={handleRefresh} />
+      <HiOutlineRefresh className={styles.refresh} onClick={() => window.location.href = window.location.href} />
     </>
   );
 }

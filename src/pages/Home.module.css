@@ -1,0 +1,22 @@
+.links{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 3rem;
+    position: fixed;
+    top: 40%;
+    right: 5rem;
+}
+
+
+.fnt{
+    object-fit: contain;
+    height: 2.2rem;
+    width: auto;
+    color: white;
+}
+
+.fnt:hover{
+    transform: scale(1.1);
+}
+

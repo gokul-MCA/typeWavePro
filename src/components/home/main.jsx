@@ -1,22 +1,17 @@
 import React, { useState, useEffect } from "react";
 import { GoogleGenerativeAI } from "@google/generative-ai";
-import styles from "./Gemini.module.css";
+import styles from "./Input.module.css";
+import { useNavigate } from "react-router-dom";
+import { SampleData } from "../../utils/data";
 
 function GeminiInReact() {
   const [inputValue, setInputValue] = useState("");
   const [promptResponses, setpromptResponses] = useState([]);
   const [loading, setLoading] = useState(false);
+  const API_KEY = import.meta.env.VITE_API_KEY;
+  const navigate = useNavigate();
 
-  useEffect(() => {
-    const localStorageData = localStorage.getItem("myData");
-    if (localStorageData) {
-      setInputValue(localStorageData);
-    }
-  }, []);
-
-  const genAI = new GoogleGenerativeAI(
-    "add your api key here"
-  );
+  const genAI = new GoogleGenerativeAI(API_KEY);
 
   const handleInputChange = (e) => {
     setInputValue(e.target.value);
@@ -27,15 +22,13 @@ function GeminiInReact() {
       setLoading(true);
       const model = genAI.getGenerativeModel({ model: "gemini-pro" });
       const result = await model.generateContent(
-        inputValue + "minimum 110 words in paragraph"
+        inputValue +
+          "minimum 110 words in paragraph and not more than 120 words"
       );
-      setInputValue("");
       const response = result.response.text();
-      // const text = response.text();
-      // console.log(text)
-      // setpromptResponses([...promptResponses, text]);
       setpromptResponses([...promptResponses, response]);
-
+      localStorage.setItem("requestData", [...promptResponses, response]);
+      setInputValue("");
       setLoading(false);
       localStorage.removeItem("myData");
     } catch (error) {
@@ -51,41 +44,46 @@ function GeminiInReact() {
 
   return (
     <div className={styles.container}>
-      <div className={styles.inputFields}>
-        <input
-          type="text"
-          value={inputValue}
-          onChange={handleInputChange}
-          placeholder="Enter the Topic you choose"
-          className={styles.formControl}
-        />
-        <button onClick={getResponseForGivenPrompt} className={styles.btn}>
-          Send
-        </button>
-      </div>
-
       {loading ? (
-        <div className="text-center mt-3">
-          <div className="spinner-border text-primary" role="status">
-            <span className="visually-hidden">Loading...</span>
-            // This message is shown while your answer to your prompt is being
-            generated
-          </div>
+        <div className={styles.modalOverlay}>
+          <span className={styles.loader}></span>
         </div>
       ) : (
-        promptResponses.map((promptResponse, index) => (
-          <div key={index}>
-            <div
-              className={`response-text ${
-                index === promptResponses.length - 1 ? "fw-bold" : ""
-              }`}
+        <div className={styles.form}>
+          <div className={styles.inputFields}>
+            <input
+              type="text"
+              value={inputValue}
+              onChange={(e) => handleInputChange(e.target.value)}
+              placeholder="Enter the Topic you choose"
+              className={styles.formControl}
+            />
+            <button
+              onClick={async () => {
+                await getResponseForGivenPrompt();
+                if (localStorage.getItem("requestData")) {
+                  navigate("/typing");
+                }
+              }}
+              className={styles.btn}
             >
-              {promptResponse}
-            </div>
-            //the latest response shown in bold letters
+              Go
+            </button>
           </div>
-        ))
+        </div>
       )}
+      <div className={styles.mainData}>
+        {SampleData.map((item, id) => (
+          <div key={id}>
+            <input
+              className={styles.btnData}
+              type="button"
+              value={item.value}
+              onClick={() => setInputValue(item.value)}
+            />
+          </div>
+        ))}
+      </div>
     </div>
   );
 }

@@ -3,8 +3,8 @@
     margin: 2rem;
     align-items: center;
     justify-content: center;
-     width: fit-content;
-     overflow: hidden;
+    overflow: hidden;
+    width: fit-content;
 }
 .form{
     display: flex;
@@ -34,8 +34,24 @@
   cursor: pointer;
 }
 
+.mainData{
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.btnData{
+  border-radius: 1rem;
+  border: 1px solid black;
+  font-size: medium;
+  padding: 5px 10px;
+  background: #3a86ff;
+  color: white;
+}
+
 .formControl::placeholder {
-  opacity: 1; /* Firefox */
+  opacity: 1; 
 }
 
 .modalOverlay {
@@ -44,7 +60,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: #fff;
+  background: rgb(25, 25, 25);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -53,7 +69,7 @@
 
 .loader{
   font-size: 48px;
-  color: #000;
+  color: white;
   display: inline-block;
   font-family: inherit;
   position: relative;

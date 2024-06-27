@@ -46,7 +46,7 @@ typewave
 2. **LLM:**  Gemini API
 
 
-## Usage/Examples
+## 📄 Usage/Examples
 
 ```javascript
 import Component from 'my-project'

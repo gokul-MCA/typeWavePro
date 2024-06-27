@@ -54,7 +54,7 @@ function GeminiInReact() {
             <input
               type="text"
               value={inputValue}
-              onChange={(e) => handleInputChange(e.target.value)}
+              onChange={handleInputChange}
               placeholder="Enter the Topic you choose"
               className={styles.formControl}
             />

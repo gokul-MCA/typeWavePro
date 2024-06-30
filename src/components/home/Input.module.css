@@ -5,12 +5,14 @@
     justify-content: center;
     overflow: hidden;
     width: fit-content;
+    margin-left:auto;
+    margin-right: auto;
 }
-.form{
+/* .form{
     display: flex;
     align-items: center;
     justify-content: center;
-}
+} */
 
 .formControl,.btn{
     padding: 10px;
@@ -19,7 +21,7 @@
 }
 
 .formControl{
-    min-width: 200px;
+    min-width: 180px;
     background: white;
     border-top-left-radius: 1rem ; 
     border-bottom-left-radius: 1rem;
@@ -39,6 +41,9 @@
   gap: 1rem;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
+  margin-left: 50px;
+  margin-right: 50px;
 }
 
 .btnData{
@@ -60,7 +65,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgb(25, 25, 25);
+  background: rgba(25, 25, 25, 0.8);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -106,4 +111,19 @@
   70% { content: 'Loading.'}
   80% { content: 'Loading..'}
   90% , 100% { content: 'Loading...'}
+}
+
+@media (max-width:480px) {
+  .mainData{
+    gap: .5rem;
+  }
+  .loader{
+    font-size: 30px;
+  }
+  .formControl{
+    width: 180px; 
+  }
+  .formControl::placeholder {
+    font-size: 14px; 
+  }
 }

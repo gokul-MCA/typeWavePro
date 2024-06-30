@@ -49,7 +49,7 @@ function GeminiInReact() {
           <span className={styles.loader}></span>
         </div>
       ) : (
-        <div className={styles.form}>
+        // <div className={styles.form}>
           <div className={styles.inputFields}>
             <input
               type="text"
@@ -70,7 +70,7 @@ function GeminiInReact() {
               Go
             </button>
           </div>
-        </div>
+        // </div>
       )}
       <div className={styles.mainData}>
         {SampleData.map((item, id) => (

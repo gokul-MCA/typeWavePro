@@ -8,6 +8,12 @@ function Result (){
     const {minutes,seconds,mistakes,charIndex,WPM,CPM,accuracy,inputRef,charRefs,correctWrong,handleChange,handleKeyDown,handleClick} = useContext(TypingState);
     const paragraph = localStorage.getItem("requestData");
     
+    useEffect(() => {
+        if (charRefs.current[charIndex]) {
+            charRefs.current[charIndex].scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+    }, [charIndex]);
+
 
     return (
     <>

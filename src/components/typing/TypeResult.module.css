@@ -31,7 +31,8 @@ strong.red{
 
 .test{
     user-select: none; 
-    text-align: justify; 
+    text-align:justify;
+    word-spacing:-5px;
     text-indent: 2rem;
 }
 
@@ -85,12 +86,14 @@ span.wrong{
     box-sizing: border-box;
     box-shadow: 0 0 6px rgba(0,0,0,0.25);
     border-radius: 10px;
+    max-width: 500px;
     width: 500px;
 }
 .para{
     padding: 20px;
     font-size: 2rem;
 }
+
 .parag{
     display: inline;
 }
@@ -119,6 +122,32 @@ span.wrong{
     display: flex;
     justify-content: space-around;
     width: inherit;
+}
+
+@media screen and (max-width:480px) {
+    span{
+        font-size: 14px;
+    }
+    .container{
+        font-size: 15px;
+    }
+
+    .popup {
+        padding: 25px;
+        width: 300px;
+    }
+    .para{
+        font-size: 14px;
+    }
+    .test {
+        overflow-y: auto; /*added for scrolling*/
+        max-height: 60vh; 
+      }
+    
+      .test span.active {
+        scroll-margin-top: 100px; /* Ensure the active character is not at the very top */
+      }
+       
 }
 
 

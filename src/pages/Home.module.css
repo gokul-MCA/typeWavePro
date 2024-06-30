@@ -20,3 +20,15 @@
     transform: scale(1.1);
 }
 
+@media (max-width:480px) {
+    .links{
+        flex-direction: row;
+        position: relative;
+        top: 30rem;
+        left: 25%;
+    }
+    .fnt{
+        height: 2rem;
+    }
+}
+

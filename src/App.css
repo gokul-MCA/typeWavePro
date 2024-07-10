@@ -13,6 +13,9 @@ body{
     gap: 5rem;
     align-items: center;
 }
+.prev span{
+  font-size: 32px;
+}
 
 .loader {
     width: 106px;
@@ -57,4 +60,15 @@ body{
       transform: rotate(360deg);
     }
   } 
+
+@media screen and (max-width:480px) {
+    .prev h1{
+      font-size: 22px;
+    }
+    .prev span{
+      display: block;
+      font-size: 22px;
+      margin-top: 5px;
+    }
+}
   

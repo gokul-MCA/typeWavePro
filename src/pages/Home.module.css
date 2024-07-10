@@ -1,10 +1,16 @@
+.main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .links{
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     gap: 3rem;
     position: fixed;
-    top: 40%;
+    top:auto;
     right: 5rem;
 }
 
@@ -20,15 +26,26 @@
     transform: scale(1.1);
 }
 
+@media (max-width:800px) {
+    .links{
+        right: 2rem;
+    }
+
+    .fnt{
+        height: 2rem;
+    }
+}
+
 @media (max-width:480px) {
     .links{
         flex-direction: row;
-        position: relative;
-        top: 30rem;
-        left: 25%;
+        position: fixed;
+        bottom: 5rem;
+        left: auto;
+        right: auto;
     }
     .fnt{
-        height: 2rem;
+        height: 1.8rem;
     }
 }
 

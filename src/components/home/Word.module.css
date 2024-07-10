@@ -6,10 +6,12 @@
   gap: 2rem;
 }
 .p {
+  margin-top: -15px;
   width: 500px;
   text-align: center;
 }
 .h1 {
+  margin: 0;
   text-align: center;
 }
 

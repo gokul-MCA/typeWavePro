@@ -7,14 +7,16 @@ import styles from './Home.module.css';
 
 const Home = () => {
   return (
-    <div>
+    <div className={styles.main}>
         <div className={styles.links}>
                 <a href="https://gokul-b.netlify.app/" target="_blank" rel="noopener noreferrer"><FaGlobe alt="portfolio" className={styles.fnt} /></a>
                 <a href="https://github.com/gokul-MCA/typeWavePro" target="_blank" rel="noopener noreferrer"><IoLogoGithub className={styles.fnt} /></a>
                 <a href="https://www.linkedin.com/in/gokul-b-mca/" target="_blank" rel="noopener noreferrer"><FaLinkedinIn alt="linkedin" className={styles.fnt} /></a>
         </div>
+        <div>
         <Word/>
         <Input/>
+        </div>
     </div>
   )
 }

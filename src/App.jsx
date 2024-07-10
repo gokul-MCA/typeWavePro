@@ -23,11 +23,11 @@ const App = () => {
     }
   }, []);
 
-  return (
+  return ( 
     <div>
       {loading ? (
         <div className="prev">
-        <h1>Hi, Welcome to TypeWave Pro!</h1>
+        <h1>Hi, <span>Welcome to TypeWave Pro!</span></h1>
         <p className="loader"></p>
         </div>
       ):(

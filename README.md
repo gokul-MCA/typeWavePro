@@ -1,4 +1,4 @@
-# TypeWavePro
+# TypeWavePro (https://typewavepro.netlify.app/)
 
 This repositories for TypeWavePro web application which is hosted in netlify.  The Application lets you choose your preferred topic for the typing test, ensuring a personalized experience.
 

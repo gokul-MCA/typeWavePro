@@ -61,8 +61,8 @@ span.correct{
 }
 
 span.wrong{
- background: var(--wrongBackground);
- color: var(--wrongColor);
+    background: var(--wrongBackground);
+    color: var(--wrongColor);
 }
 
 .result{
@@ -150,4 +150,16 @@ span.wrong{
        
 }
 
+.rating span {
+    position: relative;
+    display: flex;
+    font-weight: bold;
+    z-index: 2;
+  }
+  
+  .rating span small {
+    font-size: 0.5em;
+    font-weight: 900;
+    align-self: center;
+  }
 

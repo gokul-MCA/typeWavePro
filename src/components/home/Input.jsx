@@ -13,10 +13,6 @@ function GeminiInReact() {
 
   const genAI = new GoogleGenerativeAI(API_KEY);
 
-  const handleInputChange = (e) => {
-    setInputValue(e.target.value);
-  };
-
   const getResponseForGivenPrompt = async () => {
     try {
       setLoading(true);
@@ -54,7 +50,7 @@ function GeminiInReact() {
             <input
               type="text"
               value={inputValue}
-              onChange={handleInputChange}
+              onChange={(e) => setInputValue(e.target.value)}
               placeholder="Enter the Topic you choose"
               className={styles.formControl}
             />
@@ -66,6 +62,7 @@ function GeminiInReact() {
                 }
               }}
               className={styles.btn}
+              type="submit"
             >
               Go
             </button>

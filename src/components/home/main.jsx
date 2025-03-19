@@ -20,7 +20,7 @@ function GeminiInReact() {
   const getResponseForGivenPrompt = async () => {
     try {
       setLoading(true);
-      const model = genAI.getGenerativeModel({ model: "gemini-pro" });
+      const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash-lite" });
       const result = await model.generateContent(
         inputValue +
           "minimum 110 words in paragraph and not more than 120 words"
